@@ -23,9 +23,9 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex flex-col flex-1 overflow-y-auto px-4 pb-6"
                 >
                     <nav className="flex flex-col gap-1 mt-2">
-                        {NAV_LINKS.map((item, index) => (
+                        {NAV_LINKS.map((item) => (
                             <Link
-                                key={index}
+                                key={item.href}
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
                                 className={cn(
