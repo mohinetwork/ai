@@ -392,3 +392,20 @@ nextjs-portal {
   0% { background-position: 0% 50%; }
   100% { background-position: -200% 50%; }
 }
+
+/* Font CSS custom properties - classes set on <body> */
+.font-base {
+  --font-base: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+.font-heading {
+  --font-heading: Satoshi, "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+.font-handwriting {
+  --font-handwriting: Caveat, cursive;
+}
+
+.font-display {
+  --font-display: Syne, system-ui, -apple-system, sans-serif;
+}
