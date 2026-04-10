@@ -1,4 +1,4 @@
-import { base, heading, handwriting, display } from "@/constants";
+import { base, heading, handwriting, display, brandLogoUrl } from "@/constants";
 import "@/styles/globals.css";
 import { cn, generateMetadata } from "@/utils";
 import Providers from "@/components/global/providers";
@@ -13,19 +13,20 @@ export default function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const logoHref = brandLogoUrl ?? "/images/fyoia-logo.png";
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
                 <link rel="manifest" href="/manifest.json" />
-                <link rel="icon" href="/images/fyoia-logo.png" type="image/png" />
+                <link rel="icon" href={logoHref} type="image/png" />
                 <meta name="theme-color" content="#7C3AED" />
                 <meta name="mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
                 <meta name="apple-mobile-web-app-title" content="Fyoia AI" />
-                <link rel="apple-touch-icon" href="/images/fyoia-logo.png" />
-                <link rel="apple-touch-startup-image" href="/images/fyoia-logo.png" />
-                <meta name="msapplication-TileImage" content="/images/fyoia-logo.png" />
+                <link rel="apple-touch-icon" href={logoHref} />
+                <link rel="apple-touch-startup-image" href={logoHref} />
+                <meta name="msapplication-TileImage" content={logoHref} />
                 <meta name="msapplication-TileColor" content="#020617" />
             </head>
             <body

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Marquee } from '@/components/ui/marquee';
 import SectionBadge from '@/components/ui/section-badge';
 import { pricingPlans, trustedCompanies } from '@/constants/membership';
+import { curvedArrowAssetUrl, worksWithAssets, getAssetUrl } from '@/constants/assets';
 import { cn } from '@/utils';
 import NumberFlow from '@number-flow/react';
 import { ArrowRight, Check } from 'lucide-react';
@@ -13,24 +14,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const integrationLogos = [
-    '/icons/integrations/cursor.svg',
-    '/icons/integrations/convex.svg',
-    '/icons/integrations/dribbble.svg',
-    '/icons/integrations/dub.svg',
-    '/icons/integrations/asana.svg',
-    '/icons/integrations/figma.svg',
-    '/icons/integrations/heptabase.svg',
-    '/icons/integrations/layers.svg',
-    '/icons/integrations/mintlify.svg',
-    '/icons/integrations/soldera.svg',
-    '/icons/integrations/polar.svg',
-    '/icons/integrations/slack.svg',
-];
+const integrationLogos = worksWithAssets.map((asset) => asset.url);
 
 const Membership = () => {
 
     const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
+    const curvedArrowSrc = getAssetUrl("curved-arrow", curvedArrowAssetUrl) ?? "/icons/curved-arrow.svg";
 
     return (
         <section id="membership" className="w-full py-16 lg:py-24 relative">
@@ -106,7 +95,7 @@ const Membership = () => {
                                 2 months free
                             </span>
                             <Image
-                                src="/icons/curved-arrow.svg"
+                                src={curvedArrowSrc}
                                 alt="arrow"
                                 width={50}
                                 height={20}
@@ -285,4 +274,3 @@ const Membership = () => {
 };
 
 export default Membership;
-
