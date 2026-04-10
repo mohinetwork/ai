@@ -5,9 +5,7 @@ const nextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
-  experimental: {
-    serverComponentsExternalPackages: [],
-  },
+  transpilePackages: ["ogl", "react-wrap-balancer", "@number-flow/react"],
 };
 
 module.exports = nextConfig;
