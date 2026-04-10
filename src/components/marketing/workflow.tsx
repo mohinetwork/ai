@@ -6,9 +6,11 @@ import Wrapper from '../global/wrapper';
 import SectionBadge from '../ui/section-badge';
 import { motion } from 'motion/react';
 import { WORKFLOW_STEPS } from '@/constants/workflow';
+import { arrowAssetUrl, getAssetUrl } from '@/constants/assets';
 import Image from 'next/image';
 
 const Workflow = () => {
+    const arrowSrc = getAssetUrl("arrow", arrowAssetUrl) ?? "/icons/arrow.svg";
     return (
         <section id="workflow" className="w-full py-16 lg:py-24 relative">
 
@@ -79,7 +81,7 @@ const Workflow = () => {
                                         transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
                                     >
                                         <Image
-                                            src="/icons/arrow.svg"
+                                            src={arrowSrc}
                                             alt="arrow"
                                             width={24}
                                             height={24}
@@ -101,7 +103,7 @@ const Workflow = () => {
                                     transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
                                 >
                                     <Image
-                                        src="/icons/arrow.svg"
+                                        src={arrowSrc}
                                         alt="arrow"
                                         width={24}
                                         height={24}

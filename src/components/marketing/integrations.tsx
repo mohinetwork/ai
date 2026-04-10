@@ -1,25 +1,15 @@
 "use client";
 
 import Wrapper from '@/components/global/wrapper';
-import { Routes } from "@/constants";
 import { useIsMobile } from "@/hooks";
 import { cn } from '@/utils';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import Container from "@/components/global/container";
 import { Button } from "@/components/ui/button";
 import { Particles } from "@/components/ui/particles";
-
-const logoMap: Record<string, string> = {
-    Layers: '/icons/integrations/layers.svg',
-    Convex: '/icons/integrations/convex.svg',
-    Heptabase: '/icons/integrations/heptabase.svg',
-    Mintlify: '/icons/integrations/mintlify.svg',
-    Dribbble: '/icons/integrations/dribbble.svg',
-    Soldera: '/icons/integrations/soldera.svg'
-};
+import { brandLogoUrl, getAssetUrl, worksWithAssets } from "@/constants/assets";
 
 const IntegrationCard = ({
     children,
@@ -61,6 +51,10 @@ const IntegrationCard = ({
 const Integrations = () => {
 
     const isMobile = useIsMobile();
+    const ringOneIcons = worksWithAssets.slice(0, 3);
+    const ringTwoIcons = worksWithAssets.slice(3, 6);
+    const centerIcon = worksWithAssets[6] ?? ringOneIcons[0];
+    const logoSrc = brandLogoUrl ?? centerIcon?.url ?? getAssetUrl("fyoia-logo", "/images/fyoia-logo.png") ?? "/images/fyoia-logo.png";
 
     return (
         <section id="integrations" className="w-full py-16 lg:py-24 relative z-0">
@@ -98,15 +92,15 @@ const Integrations = () => {
                     >
                         <IntegrationCard
                             className="absolute left-0 top-1/4 -translate-x-1/6 -translate-y-1/4"
-                            iconSrc={logoMap.Layers}
+                            iconSrc={ringOneIcons[0]?.url}
                         />
                         <IntegrationCard
                             className="absolute top-0 -translate-y-1/2"
-                            iconSrc={logoMap.Convex}
+                            iconSrc={ringOneIcons[1]?.url}
                         />
                         <IntegrationCard
                             className="absolute right-0 top-1/4 translate-x-1/6 -translate-y-1/4"
-                            iconSrc={logoMap.Heptabase}
+                            iconSrc={ringOneIcons[2]?.url}
                         />
                     </motion.div>
 
@@ -119,22 +113,22 @@ const Integrations = () => {
                     >
                         <IntegrationCard
                             className="absolute top-0 -translate-y-1/2"
-                            iconSrc={logoMap.Soldera}
+                            iconSrc={ringTwoIcons[0]?.url}
                         />
                         <IntegrationCard
                             className="absolute left-0 top-1/4 -translate-x-1/4 -translate-y-1/4"
-                            iconSrc={logoMap.Mintlify}
+                            iconSrc={ringTwoIcons[1]?.url}
                         />
                         <IntegrationCard
                             className="absolute right-0 top-1/4 translate-x-1/4 -translate-y-1/4"
-                            iconSrc={logoMap.Dribbble}
+                            iconSrc={ringTwoIcons[2]?.url}
                         />
                     </motion.div>
 
                     <Container animation="blurIn" delay={0.5} className="absolute inset-x-0 bottom-0 lg:bottom-1/10 mx-auto my-2 flex justify-center gap-2 w-fit scale-90 lg:scale-100">
                         <div className="bg-primary/5 relative z-20 rounded-full border border-foreground/10 backdrop-blur-sm p-1.5 group">
                             <IntegrationCard className="size-14 bg-primary/5">
-                                <Image src="/images/fyoia-logo.png" alt="Fyoia AI" width={32} height={32} className="text-primary group-hover:scale-110 group-active:scale-95 transition-all duration-300 object-contain" />
+                                <Image src={logoSrc} alt="Fyoia AI" width={32} height={32} className="text-primary group-hover:scale-110 group-active:scale-95 transition-all duration-300 object-contain" />
                             </IntegrationCard>
                         </div>
                     </Container>

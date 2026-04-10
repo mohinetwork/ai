@@ -5,9 +5,10 @@ import Wrapper from '@/components/global/wrapper';
 import { Button } from '@/components/ui/button';
 import { Routes } from '@/constants';
 import { motion } from 'motion/react';
-import Link from 'next/link';
+import { brandLogoUrl } from '@/constants/assets';
 
 const Cta = () => {
+    const logoSrc = brandLogoUrl ?? "/images/fyoia-logo.png";
     return (
         <section className="w-full py-16 lg:pt-24 relative overflow-hidden">
             <Wrapper>
@@ -60,14 +61,14 @@ const Cta = () => {
                                         scale: [1, 1.2, 1],
                                         opacity: [0.3, 0.6, 0.3]
                                     }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }}
-                                    className="absolute inset-0 bg-primary/40 rounded-2xl blur-2xl"
-                                />
-                                <Image src="/images/fyoia-logo.png" alt="Fyoia AI" width={120} height={36} className="h-6 w-auto" />
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute inset-0 bg-primary/40 rounded-2xl blur-2xl"
+                            />
+                                <Image src={logoSrc} alt="Fyoia AI" width={120} height={36} className="h-6 w-auto" />
                             </motion.div>
 
                             <motion.h2

@@ -8,10 +8,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import { cn } from "@/utils";
+import { brandLogoUrl } from '@/constants/assets';
 
 const Footer = () => {
 
     const [email, setEmail] = useState<string>("");
+    const logoSrc = brandLogoUrl ?? "/images/fyoia-logo.png";
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -28,7 +30,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                     <div className="lg:col-span-4">
                         <Link href="/" className="inline-flex items-center gap-2">
-                            <Image src="/images/fyoia-logo.png" alt="Fyoia AI" width={120} height={36} className="h-5 w-auto" />
+                            <Image src={logoSrc} alt="Fyoia AI" width={120} height={36} className="h-5 w-auto" />
                             <span className="text-sm font-semibold tracking-wide">
                                 Fyoia AI
                             </span>

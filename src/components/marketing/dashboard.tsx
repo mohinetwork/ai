@@ -1,12 +1,14 @@
 import { LayoutGrid, FolderKanban, Users, CheckSquare, CircleUserRound, Receipt, FileText, Blocks, Settings, Search, Bell, Calendar, MoreHorizontal, BellIcon } from 'lucide-react';
 import Image from 'next/image';
+import { brandLogoUrl } from '@/constants/assets';
 
 const Dashboard = () => {
+    const logoSrc = brandLogoUrl ?? "/images/fyoia-logo.png";
     return (
         <div className="w-full h-full bg-[#0A0B0F] flex overflow-hidden">
             <aside className="w-60 border-r border-foreground/10 flex flex-col shrink-0">
                 <div className="p-4">
-                    <Image src="/images/fyoia-logo.png" alt="Fyoia AI" width={100} height={30} className="h-5 w-auto" />
+                    <Image src={logoSrc} alt="Fyoia AI" width={100} height={30} className="h-5 w-auto" />
                 </div>
 
                 <nav className="flex-1 p-3 space-y-0.5 overflow-y-auto">

@@ -12,10 +12,12 @@ import MobileMenu from "./mobile-menu";
 import { NAV_LINKS, Routes } from "@/constants";
 import { motion } from "motion/react";
 import { useIsMobile } from "@/hooks";
+import { brandLogoUrl } from "@/constants/assets";
 
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const logoSrc = brandLogoUrl ?? "/images/fyoia-logo.png";
 
     useEffect(() => {
         if (isOpen) {
@@ -40,11 +42,11 @@ const Navbar = () => {
             >
                 <div className="backdrop-blur-xl rounded-xl lg:rounded-full border border-[rgba(255,255,255,0.1)] h-full flex flex-col overflow-hidden relative">
                     <div className="flex items-center justify-between w-full px-4 min-h-14 md:min-h-16 shrink-0 pb-1">
-                        <div className="flex items-center flex-1 lg:flex-none">
-                            <Link href={Routes.Home} className="text-lg font-semibold text-foreground group flex items-center">
-                                <Image src="/images/fyoia-logo.png" alt="Fyoia AI" width={120} height={36} className="h-8 w-auto transition-all group-hover:drop-shadow-[0_0_8px_rgba(0,85,255,0.6)]" />
+                    <div className="flex items-center flex-1 lg:flex-none">
+                        <Link href={Routes.Home} className="text-lg font-semibold text-foreground group flex items-center">
+                                <Image src={logoSrc} alt="Fyoia AI" width={120} height={36} className="h-8 w-auto transition-all group-hover:drop-shadow-[0_0_8px_rgba(0,85,255,0.6)]" />
                             </Link>
-                        </div>
+                    </div>
 
                         <div className="lg:flex items-center hidden gap-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                             {NAV_LINKS.map((item, index) => (

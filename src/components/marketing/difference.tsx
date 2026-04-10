@@ -5,8 +5,10 @@ import { motion } from 'motion/react';
 import Image from "next/image";
 import Wrapper from '@/components/global/wrapper';
 import SectionBadge from '@/components/ui/section-badge';
+import { brandLogoUrl } from '@/constants/assets';
 
 const Difference = () => {
+    const logoSrc = brandLogoUrl ?? "/images/fyoia-logo.png";
     return (
         <section id="difference" className="w-full py-16 lg:py-24 relative overflow-hidden">
             <Wrapper>
@@ -120,7 +122,7 @@ const Difference = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <Image src="/images/fyoia-logo.png" alt="Fyoia AI" width={32} height={32} className="size-8 object-contain" />
+                            <Image src={logoSrc} alt="Fyoia AI" width={32} height={32} className="size-8 object-contain" />
 
                             <motion.div
                                 className="absolute inset-0 rounded-full border-2 border-primary/30"
@@ -143,5 +145,3 @@ const Difference = () => {
 };
 
 export default Difference;
-
-

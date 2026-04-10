@@ -11,6 +11,7 @@ import { cn } from '@/utils';
 import Balancer from 'react-wrap-balancer';
 import Image from 'next/image';
 import Container from "../global/container";
+import { heroDashboardAssetUrl } from "@/constants/assets";
 
 const badges = [
     { text: "Project Management", top: "15%", left: "5%" },
@@ -164,7 +165,7 @@ const Hero = () => {
 
                         <div className="rounded-lg md:rounded-[24px] border border-foreground/10 bg-background overflow-hidden">
                             <Image
-                                src="/images/anmix-dashboard.png"
+                                src={heroDashboardAssetUrl}
                                 alt="Fyoia AI Dashboard"
                                 width={1920}
                                 height={1080}
@@ -194,4 +195,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

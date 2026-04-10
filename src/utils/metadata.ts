@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import { ogImageUrl } from "@/constants/assets";
 
 export const generateMetadata = ({
     title = `Fyoia AI | Home`,
     description = `All-in-one AI platform for chat, coding, image generation, video creation, and voice agents — powered by Fyoia models.`,
-    image = "/images/og-image.png",
+    image = ogImageUrl ?? "/images/og-image.png",
     icons = [
         {
             rel: "apple-touch-icon",
