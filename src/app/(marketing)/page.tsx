@@ -5,6 +5,7 @@ import Socials from "@/components/marketing/socials";
 import Workflow from "@/components/marketing/workflow";
 import Capibilities from "@/components/marketing/capibilities";
 import Integrations from "@/components/marketing/integrations";
+import DashboardPreview from "@/components/marketing/dashboard-preview";
 import Membership from "@/components/marketing/membership";
 import WallOfLove from "@/components/marketing/wall-of-love";
 import Cta from "@/components/marketing/cta";
@@ -19,6 +20,7 @@ const HomePage = () => {
             <Workflow />
             <Capibilities />
             <Integrations />
+            <DashboardPreview />
             <Membership />
             <WallOfLove />
             <Cta />
